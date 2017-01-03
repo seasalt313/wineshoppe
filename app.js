@@ -21,6 +21,7 @@ var shop = [{
 }, ]
 
 let cart_array = [];
+let wine = null;
 
 function init() {
 
@@ -38,6 +39,10 @@ function init() {
         let buy_button = document.createElement("button");
         buy_button.setAttribute("class", "buy_button");
 
+        let itemId = shop[i].id;
+        buy_button.setAttribute("id", shop[i].id);
+
+        // wine = shop[i].wine;
         store_item.textContent = shop[i].wine;
         item_description.textContent = shop[i].description;
         price.textContent = shop[i].cost;
@@ -49,12 +54,15 @@ function init() {
         store_item.appendChild(buy_button);
 
 
-        buy_button.addEventListener("click", buyit);
+        buy_button.addEventListener("click", function(){
+          buyit(shop[i].wine);
+
+        });
     } //closing forloop init
 
 
 
-    function buyit() {
+    function buyit(wine) {
         let cart = document.querySelector(".cart_list");
         let add_item = document.createElement("li");
         add_item.setAttribute("class", "add_item");

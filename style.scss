@@ -17,48 +17,49 @@ html  {
     border: 7px solid #407899;
     padding: 40px;
     font-family: 'Arima Madurai', cursive;
-    .items {
+    main {
+      @include grid-row();
+      #cart {
+        @include grid-column(12);
+        border: 1px solid #011638;
+        padding: 15px;
+          @include breakpoint(820px){
+            @include grid-column(4);
+          }
+          h1 {
+            text-align: center;
+          }
+        }
+      #products {
+        @include grid-column(12);
+        border: 1px solid #011638;
+        padding: 15px;
+          @include breakpoint(820px){
+            @include grid-column(8);
+          }
+      }
+
+    }
+
+    .list_item {
       @include grid-column(12);
       padding: 15px;
+      border: 1px solid black;
+      list-style: none;
+      font-family: verdana;
         @include breakpoint(820px){
           @include grid-column(8);
         }
       }
-    .cart {
-      @include grid-column(12);
-      border: 1px solid #011638;
-      padding: 15px;
-        @include breakpoint(820px){
-          @include grid-column(4);
-        }
-        h1 {
-          text-align: center;
-        }
-      }
-      .checkout{
-        border: 3px solid #011638;
-        padding: 10px;
-        font-size: 18px;
-        border-radius: 4px;
-        font-family: 'Arima Madurai', cursive;
-      }
-      .items_list {
-        h1 {
-          text-align: center;
-        }
-        .store_item {
-          margin: 40px;
-          padding: 30px;
-          border: 2px solid #B7AD99;
-          list-style: none;
-        }
-        .buy_button {
+
+
+        button {
           padding: 10px;
           background-color: #B7AD91;
           border: 2px solid #948B89;
           border-radius: 3px;
-          font-family: 'Arima Madurai', cursive;
-        }
+          font-family: 'verdana';
+
       }
     }
   }

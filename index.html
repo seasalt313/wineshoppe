@@ -2,41 +2,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Shopper's Delite</title>
+    <title>Wine Shoppe</title>
+    <!-- add css file -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js">
+    </script>
+
+    <!-- create a mustache template -->
+    <script type="x-mustache-template" id="product-template">
+    <h2>{{wineName}}</h2>
+    <p class="description">Description: {{wineDescription}}</p>
+    <p class="price">Price: ${{winePrice}}</p>
+    <button class="buy_button">Add to cart</button>
+    </script>
 
   </head>
   <body>
-<p>Design a layout for a page that shows a list of products as the majority of the page and a shopping cart panel as a secondary element. I'd suggest at least a two-column layout (one for each of these goals). Each product in the list should have a buy button, and when you click the buy button the product should show up in the cart.
-<br>
-<br>
-For this project you should pay attention both to design elements and to functionality.</p>
-<br>
-<br>
-</p>
+    <h1>WineShoppe</h1>
 
-<div class="items">
-  <ul class="items_list">
-    <h1>Wine Shoppe</h1>
+  <main>
+    <section id="products">
+      <ul>
+      </ul>
+    </section>
 
-  </ul>
-</div>
+    <section id="cart">
+      <h1>Cart</h1>
+      <ul>
+      </ul>
+    </section>
+  </main>
 
-<div class="cart">
-  <ul class="cart_list">
-    <h1>Basket</h1>
-
-
-  </ul>
-
-  <p>Tax: </p>
-  <p>Total: </p>
-  <button type="button" name="button" class="checkout">CHECKOUT</button>
-</div>
-
-
-<script src="app.js" type="text/javascript">
-</script>
+    <!-- add js file -->
+    <script src="stacheapp.js" type="text/javascript">
+    </script>
   </body>
 </html>

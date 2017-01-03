@@ -44,7 +44,45 @@ function showProducts(product) {
     parent.appendChild(child);
 
     let button = child.querySelector("button");
-    button.addEventListener('click', function(){
-      console.log('clicked on ' + product.wine);
+    button.addEventListener('click', function() {
+        console.log('clicked on ' + product.wine);
+        cart_array.push(product);
+        console.log(cart_array);
+        // showCart();
     })
+}
+
+
+function showCart() {
+    let cartList = document.querySelector("#cart ul");
+    cartList.innerHTML = '';
+
+    for (let i = 0; i < cart.length; i++) {
+        showCartItem(cart[i])
+    }
+
+    let subtotal = 0;
+    for (let i = 0; i < cart.length; i++) {
+        subtotal = subtotal + cart[i].cost;
+    }
+
+    //add number to document
+    document.querySelector("#cart-subtotal").textContent = subtotal;
+    document.querySelector("#cart-tax").textContent = subtotal * 0.1;
+    document.querySelector("#cart-total").textContent = subtotal + (subtotal * 0.1);
+}
+
+function showCartItem(item) {
+    let child = document.createElement("li");
+    let parent = document.querySelector("#cart ul");
+    let template = document.querySelector("#cart-template");
+
+    child.innerHTML = Mustache.render(template.innerHTML, {
+        wineName: item.wine,
+        winePrice: item.cost,
+    })
+
+    parent.appendChild(child);
+
+
 }

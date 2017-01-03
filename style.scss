@@ -1,65 +1,63 @@
 // IMPORT FOUNDATION INTO MY SASS
-
 @import 'node_modules/foundation-sites/scss/foundation';
-
 // IN PARTICULAR, WE NEED TWO MODULES
-
 @include foundation-global-styles;
 @include foundation-grid;
 
-html  {
-  background-image: url("images/grape.jpg");
-  body {
-    @include grid-row();
-    margin: 100px;
-    background-color: #FFFFF2;
-    opacity: .7;
-    border: 7px solid #407899;
-    padding: 40px;
-    font-family: 'Arima Madurai', cursive;
-    main {
-      @include grid-row();
-      #cart {
-        @include grid-column(12);
-        border: 1px solid #011638;
-        padding: 15px;
-          @include breakpoint(820px){
-            @include grid-column(4);
-          }
-          h1 {
-            text-align: center;
-          }
+html {
+    background-image: url("images/grape.jpg");
+
+    body {
+        @include grid-row();
+        margin: 100px;
+        background-color: #FFFFF2;
+        opacity: 0.7;
+        border: 7px solid #407899;
+        padding: 40px;
+        font-family: 'Arima Madurai', cursive;
+
+        main {
+            @include grid-row();
+
+            #cart {
+                @include grid-column(12);
+                border: 1px solid #011638;
+                padding: 15px;
+                @include breakpoint(820px) {
+                     @include grid-column(4);
+                }
+
+                h1 {
+                    text-align: center;
+                }
+                p {
+                  font-family: verdana;
+                }
+            }
+
+            #products {
+                @include grid-column(12);
+                border: 1px solid #011638;
+                padding: 15px;
+                @include breakpoint(820px) {
+                     @include grid-column(8);
+                }
+            }
+
+            .list_item {
+                list-style: none;
+                font-family: verdana;
+                width: 100%;
+                border-top: 2px solid grey;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #B7AD91;
+                border: 2px solid #948B89;
+                border-radius: 3px;
+                font-family: 'verdana';
+            }
         }
-      #products {
-        @include grid-column(12);
-        border: 1px solid #011638;
-        padding: 15px;
-          @include breakpoint(820px){
-            @include grid-column(8);
-          }
-      }
-
     }
-
-    .list_item {
-      @include grid-column(12);
-      padding: 15px;
-      border: 1px solid black;
-      list-style: none;
-      font-family: verdana;
-        @include breakpoint(820px){
-          @include grid-column(8);
-        }
-      }
-
-
-        button {
-          padding: 10px;
-          background-color: #B7AD91;
-          border: 2px solid #948B89;
-          border-radius: 3px;
-          font-family: 'verdana';
-
-      }
-    }
-  }
+}

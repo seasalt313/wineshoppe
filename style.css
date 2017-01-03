@@ -1373,7 +1373,7 @@ html {
     margin-left: auto;
     margin: 100px;
     background-color: #FFFFF2;
-    opacity: .7;
+    opacity: 0.7;
     border: 7px solid #407899;
     padding: 40px;
     font-family: 'Arima Madurai', cursive; }
@@ -1419,6 +1419,8 @@ html {
               float: right; } }
         html body main #cart h1 {
           text-align: center; }
+        html body main #cart p {
+          font-family: verdana; }
       html body main #products {
         width: 100%;
         float: left;
@@ -1445,39 +1447,16 @@ html {
         @media screen and (min-width: 51.25em) {
             html body main #products:last-child:not(:first-child) {
               float: right; } }
-    html body .list_item {
-      width: 100%;
-      float: left;
-      padding-right: 0.625rem;
-      padding-left: 0.625rem;
-      padding: 15px;
-      border: 1px solid black;
-      list-style: none;
-      font-family: verdana; }
-      @media print, screen and (min-width: 40em) {
-        html body .list_item {
-          padding-right: 0.9375rem;
-          padding-left: 0.9375rem; } }
-      html body .list_item:last-child:not(:first-child) {
-        float: right; }
-      @media screen and (min-width: 51.25em) {
-        html body .list_item {
-          width: 66.66667%;
-          float: left;
-          padding-right: 0.625rem;
-          padding-left: 0.625rem; } }
-  @media screen and (min-width: 51.25em) and (min-width: 40em) {
-    html body .list_item {
-      padding-right: 0.9375rem;
-      padding-left: 0.9375rem; } }
-      @media screen and (min-width: 51.25em) {
-          html body .list_item:last-child:not(:first-child) {
-            float: right; } }
-    html body button {
-      padding: 10px;
-      background-color: #B7AD91;
-      border: 2px solid #948B89;
-      border-radius: 3px;
-      font-family: 'verdana'; }
+      html body main .list_item {
+        list-style: none;
+        font-family: verdana;
+        width: 100%;
+        border-top: 2px solid grey; }
+      html body main button {
+        padding: 10px;
+        background-color: #B7AD91;
+        border: 2px solid #948B89;
+        border-radius: 3px;
+        font-family: 'verdana'; }
 
 /*# sourceMappingURL=style.css.map */
